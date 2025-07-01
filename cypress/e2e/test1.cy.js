@@ -7,7 +7,6 @@ describe('QAuto login and header/footer check', () => {
       }
     });
   });
-
   it('should find all header buttons', () => {
     cy.get('header').within(() => {
       cy.contains('Home').should('be.visible');
@@ -17,18 +16,13 @@ describe('QAuto login and header/footer check', () => {
       cy.contains('Sign In').should('be.visible');
     });
   });
-
   it('should find all footer links and buttons', () => {
   cy.scrollTo('bottom');
-
-  // Социальные иконки
   cy.get('a[href="https://www.facebook.com/Hillel.IT.School"]').should('exist');
   cy.get('a[href="https://t.me/ithillel_kyiv"]').should('exist');
   cy.get('a[href="https://www.youtube.com/user/HillelITSchool?sub_confirmation=1"]').should('exist');
   cy.get('a[href="https://www.instagram.com/hillel_itschool/"]').should('exist');
   cy.get('a[href="https://www.linkedin.com/school/ithillel/"]').should('exist');
-
-  // Контактные ссылки справа
   cy.contains('a', 'ithillel.ua').should('be.visible');
   cy.contains('a', 'support@ithillel.ua').should('be.visible');
 });
